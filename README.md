@@ -1,13 +1,18 @@
 # simple-BMP-to-TKdata
 Convert BMP 1 bit into Tkinter Data string | Convierte una imagen de BMP de 1 bit a una string para insertar en Tkinter
+
 Beneficios: no se necesita portar el archivo de imagen, si no que se introduce la string en el codigo y listo.
 
+![image](https://user-images.githubusercontent.com/95723749/212911114-144b36f8-346d-4bf8-b98e-365d3c12c0ae.png)
 
 
 ## Usar el resultado:
 
 ``` Python
-from tkinter import Button, BitmapImage;
+from tkinter import Tk, Button, BitmapImage;
+
+
+root = Tk();
 
 BITMAP_EXAMPLE = """#define image_width 28
 #define image_height 28
@@ -23,10 +28,15 @@ static char image_bits[] = {
 };"""
 
 
-bpExample = BitmapImage("password", data=BITMAP_EXAMPLE);
-        
-btnFirstPassword = Button(root, image=bpExample,compound="left",bd=1,overrelief="ridge",
+bpExample = BitmapImage("example", data=BITMAP_EXAMPLE);
+#bpExample need exists on reference global | bpExample necesita existir globalmente y no ser liberado
+
+btnExample = Button(root, image=bpExample,compound="left",bd=1,overrelief="ridge",
                             relief="flat",cursor="hand2",
                             );
-```
 
+btnExample.pack()
+
+root.mainloop();
+
+```
