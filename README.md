@@ -9,7 +9,10 @@ Beneficios: no se necesita portar el archivo de imagen, si no que se introduce l
 ## Usar el resultado:
 
 ``` Python
-from tkinter import Button, BitmapImage;
+from tkinter import Tk, Button, BitmapImage;
+
+
+root = Tk();
 
 BITMAP_EXAMPLE = """#define image_width 28
 #define image_height 28
@@ -25,10 +28,15 @@ static char image_bits[] = {
 };"""
 
 
-bpExample = BitmapImage("password", data=BITMAP_EXAMPLE);
-        
-btnFirstPassword = Button(root, image=bpExample,compound="left",bd=1,overrelief="ridge",
+bpExample = BitmapImage("example", data=BITMAP_EXAMPLE);
+#bpExample need exists on reference global | bpExample necesita existir globalmente y no ser liberado
+
+btnExample = Button(root, image=bpExample,compound="left",bd=1,overrelief="ridge",
                             relief="flat",cursor="hand2",
                             );
-```
 
+btnExample.pack()
+
+root.mainloop();
+
+```
