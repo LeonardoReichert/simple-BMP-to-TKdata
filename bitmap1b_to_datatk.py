@@ -107,9 +107,10 @@ frameResult.rowconfigure(0, weight=1);
 
 txtResult = Text(frameResult, wrap="char");
 txtResult.insert("0.0", "Result here");
-sby = Scrollbar(frameResult, orient="vertical");
+sby = Scrollbar(frameResult, orient="vertical", command=txtResult.yview);
 txtResult.grid(column=0, row=0, sticky="swne");
 sby.grid(column=1, row=0, sticky="sn");
+txtResult.configure(yscrollcommand=sby.set);
 
 Button(frameResult, text="Copy", command=copy).grid(column=0, row=2, sticky="sn");
 
