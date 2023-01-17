@@ -2,6 +2,7 @@
 Convert BMP 1 bit into Tkinter Data string | Convierte una imagen de BMP de 1 bit a una string para insertar en Tkinter
 Beneficios: no se necesita portar el archivo de imagen, si no que se introduce la string en el codigo y listo.
 
+![image](https://user-images.githubusercontent.com/95723749/212911114-144b36f8-346d-4bf8-b98e-365d3c12c0ae.png)
 
 
 ## Usar el resultado:
